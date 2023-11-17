@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head><title>Goggle Classroom</title></head>
+
+<body>
+
+<script>
+
+    function newWinOpen () {
+        var LinkVarHasValue = True
+        var LinkVar = document.getElementById("linkvariable").value
+        var widthVar = document.getElementById("widthvariable").value
+        var heightVar = document.getElementById("heightvariable").value
+
+        if (widthVar == "") {
+            widthVar = 750
+        }
+        if (heightVar == "") {
+            heightVar = 375
+        }
+        if (LinkVar == ""){
+            LinkVarHasValue = false
+            alert("Need Link")
+        }
+        else{
+
+            var newWindow = window.open("about:blank","","menubar=1,resizeable=0,location=0,")
+        
+            newWindow.document.write("<!DOCTYPE html><html><head><title></title></head><body><iframe src='"+LinkVar+"' width='"+widthVar+"' height='"+heightVar+"'></iframe></body></html>")
+            
+
+        }
+    }
+
+</script>
+
+<p>Link:</p>
+<input type="text" id="linkvariable">
+<p>Width[optional]:</p>
+<input type="text" id="widthvariable">
+<p>Height[optional]:</p>
+<input type="text" id="heightvariable">
+<br><br>
+<button onclick="newWinOpen()">Open Link</button>
+<br>
+<br>
+<br>
+<p style="font-size: 12px;">If it doesn't load, check browser compatibility and try to restart the computer if it still doesn't work.</p>
+
+</body>
+
+</html>
+
